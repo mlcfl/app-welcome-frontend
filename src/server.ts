@@ -1,6 +1,6 @@
 import {renderToString} from 'vue/server-renderer';
 import {SsrRenderer} from 'common/be/services';
-import {createApp} from './index';
+import {createApp} from './app';
 
 /**
  * SSR entry point

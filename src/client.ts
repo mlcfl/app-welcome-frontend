@@ -1,4 +1,4 @@
-import {createApp} from './index';
+import {createApp} from './app';
 
 /**
  * SPA entry point
