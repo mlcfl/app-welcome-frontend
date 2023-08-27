@@ -3,9 +3,8 @@
 	"ssr": {},
 	"ssg": {
 		"index": {
-			"entryClient": "src/client.ts",
-			"entryServer": "src/server.ts",
-			"template": "src/template.html"
+			"entryClient": "index.html",
+			"entryServer": "src/server.ts"
 		}
 	}
 }
