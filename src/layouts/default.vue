@@ -1,17 +1,14 @@
-<style lang="scss" module>
-.main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	width: 100dvw;
-	height: 100vh;
-	height: 100dvh;
-}
-</style>
-
 <template>
-	<main :class="$style.main">
-		<slot />
-	</main>
+	<VApp>
+		<VAppBar elevation="0" class="border-b-thin">
+			<VAppBarTitle class="ma-0 text-center">MLC</VAppBarTitle>
+		</VAppBar>
+		<VMain>
+			<slot />
+		</VMain>
+	</VApp>
 </template>
+
+<script lang="ts" setup>
+useHead({ title: "MLC | Welcome" });
+</script>
