@@ -16,6 +16,8 @@
 	},
 	"dependencies": {
 		"@mdi/font": "^7.4.47",
+		"@shared/all": "link:../../../shared/shared-all",
+		"@shared/frontend": "link:../../../shared/shared-frontend",
 		"joi": "^17.13.3",
 		"nuxt": "^3.16.2",
 		"pinia": "^3.0.1",

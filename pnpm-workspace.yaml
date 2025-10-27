@@ -1,3 +1,7 @@
 onlyBuiltDependencies:
-  - "@parcel/watcher"
+  - '@parcel/watcher'
   - esbuild
+
+overrides:
+  '@shared/all': link:../../../shared/shared-all
+  '@shared/frontend': link:../../../shared/shared-frontend

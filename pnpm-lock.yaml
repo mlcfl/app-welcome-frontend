@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@shared/all': link:../../../shared/shared-all
+  '@shared/frontend': link:../../../shared/shared-frontend
+
 importers:
 
   .:
@@ -11,6 +15,12 @@ importers:
       '@mdi/font':
         specifier: ^7.4.47
         version: 7.4.47
+      '@shared/all':
+        specifier: link:../../../shared/shared-all
+        version: link:../../../shared/shared-all
+      '@shared/frontend':
+        specifier: link:../../../shared/shared-frontend
+        version: link:../../../shared/shared-frontend
       joi:
         specifier: ^17.13.3
         version: 17.13.3
