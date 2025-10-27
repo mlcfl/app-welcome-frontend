@@ -149,6 +149,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useSubdomainUrl } from "@shared/frontend";
+
 const apps: { title: string; description: string }[] = [
 	{
 		title: "Welcome",
@@ -243,11 +245,5 @@ const licenseItems = [
 	},
 ];
 
-const apphubUrl = computed(() => {
-	const { protocol, hostname, port } = window.location;
-	const index = hostname.endsWith("localhost") ? -1 : -2;
-	const host = hostname.split(".").slice(index).join(".");
-
-	return `${protocol}//apphub.${host}${port ? `:${port}` : ""}`;
-});
+const apphubUrl = useSubdomainUrl("apphub");
 </script>
