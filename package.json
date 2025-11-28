@@ -6,13 +6,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
+		"dev": "nuxt dev --dotenv .env.development",
+		"build": "nuxt build --dotenv .env.production",
+		"generate": "nuxt generate --dotenv .env.production",
 		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+		"lint:fix": "eslint . --fix",
+		"postinstall": "nuxt prepare --dotenv .env.production"
 	},
 	"dependencies": {
 		"@mdi/font": "^7.4.47",

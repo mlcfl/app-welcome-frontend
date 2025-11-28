@@ -1,7 +1,31 @@
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
-// Init render mode based on env
-const mode = process.env.RENDER_MODE ?? "CSR";
+// Env
+const mode = process.env.RENDER_MODE;
+const port = process.env.DEV_SERVER_PORT;
+const apiBase = process.env.NUXT_PUBLIC_API_BASE;
+const authApiBase = process.env.NUXT_PUBLIC_AUTH_API_BASE;
+
+if (!mode) {
+	throw new Error("RENDER_MODE env is not set");
+} else if (!["CSR", "SSR", "SSG"].includes(mode)) {
+	throw new Error(
+		`RENDER_MODE env has invalid value: ${mode}. Allowed: CSR, SSR, SSG`
+	);
+}
+
+if (!port) {
+	throw new Error("DEV_SERVER_PORT env is not set");
+}
+
+if (!apiBase) {
+	throw new Error("NUXT_PUBLIC_API_BASE env is not set");
+}
+
+if (!authApiBase) {
+	throw new Error("NUXT_PUBLIC_AUTH_API_BASE env is not set");
+}
+
 const ssrEnabled = () => {
 	return ["SSR", "SSG"].includes(mode);
 };
@@ -66,7 +90,11 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			apiBase: "", // overridden by NUXT_PUBLIC_API_BASE
+			apiBase,
+			authApiBase,
 		},
+	},
+	devServer: {
+		port: Number(port),
 	},
 });
