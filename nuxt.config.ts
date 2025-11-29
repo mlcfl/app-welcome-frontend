@@ -18,14 +18,6 @@ if (!port) {
 	throw new Error("DEV_SERVER_PORT env is not set");
 }
 
-if (!apiBase) {
-	throw new Error("NUXT_PUBLIC_API_BASE env is not set");
-}
-
-if (!authApiBase) {
-	throw new Error("NUXT_PUBLIC_AUTH_API_BASE env is not set");
-}
-
 const ssrEnabled = () => {
 	return ["SSR", "SSG"].includes(mode);
 };
