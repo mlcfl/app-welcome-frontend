@@ -1,4 +1,8 @@
-# Application Welcome (frontend)
+# Welcome — Frontend
+
+Frontend part of the Welcome application. Welcome is a simple landing page that introduces the MLC project. It requires no authentication or any other preconditions — it is publicly accessible.
+
+The site is statically generated (SSG) using Nuxt. No server-side rendering at runtime — just pre-built HTML/CSS/JS served as static files.
 
 ## Setup
 
@@ -8,29 +12,39 @@ pnpm install
 
 ## Development
 
-Dev server
+Start the dev server (uses `.env.development`):
 
 ```bash
 pnpm dev
 ```
 
-Build
+## Build
+
+Static generation for production (uses `.env.production`):
 
 ```bash
-# SSR
-pnpm build
-# SSG
 pnpm generate
+```
 
-# preview
+Output goes to `.output/public/`.
+
+SSR build (if needed):
+
+```bash
+pnpm build
+```
+
+Preview the production build locally:
+
+```bash
 pnpm preview
 ```
 
-Linter
+## Lint
 
 ```bash
 pnpm lint
-# or
+# or auto-fix
 pnpm lint:fix
 ```
 
